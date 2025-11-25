@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Capa_Vista_Seguridad;
+using Capa_Vista_Hoteleria;
 
 namespace Interfac_V3
 {
@@ -36,8 +38,12 @@ namespace Interfac_V3
 
         private void btnSeguridad_Click(object sender, EventArgs e)
         {
-            //FormPrincipal forma = new FormPrincipal();
-            //forma.Show();
+             using (var splash = new Capa_Vista_Seguridad.Frm_Slash())
+            {
+                splash.ShowDialog();
+            }
+            Frm_Login forma = new Frm_Login();
+            forma.Show();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -57,8 +63,12 @@ namespace Interfac_V3
 
         private void btnPropio_Click(object sender, EventArgs e)
         {
-            //FormPrincipal forma = new FormPrincipal();
-            //forma.Show();
+            using (var splash = new Capa_Vista_Hoteleria.Frm_Splash())
+            {
+                splash.ShowDialog();
+            }
+            Frm_Login_Hoteleria forma = new Frm_Login_Hoteleria();
+            forma.Show();
         }
     }
 }
